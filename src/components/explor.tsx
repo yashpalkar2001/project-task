@@ -12,25 +12,25 @@ const Explor = () => {
     },
 
     {
-      imag: "/media2.png",
+      imag: "/Media2.png",
       title: "Festivals",
       subTitle:
         "Celebrate wellness, community, and conscious living through experiences.",
     },
     {
-      imag: "/media3.png",
+      imag: "/Media3.png",
       title: "Tourism",
       subTitle:
         "Travel with purpose—curated journeys that heal, inspire, and transform.",
     },
     {
-      imag: "/media4.png",
+      imag: "/Media4.png",
       title: "Courses",
       subTitle:
         "Empower your mind and spirit with guided learning for holistic growth.",
     },
     {
-      imag: "/media5.png",
+      imag: "/Media5.png",
       title: "Corporate Wellness",
       subTitle:
         "Fostering mindful, healthy workplaces through tailored wellness solutions.",

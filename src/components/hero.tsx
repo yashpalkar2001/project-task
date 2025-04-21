@@ -26,11 +26,11 @@ const Hero = () => {
         <div className="w-full absolute top-[4%]">
           <Navbar />
         </div>
-        <div className="absolute bottom-10 flex flex-wrap gap-6 justify-center w-full ">
+        <div className="absolute bottom-10 flex flex-wrap gap-2 md:gap-6 justify-center w-full ">
           {items.map((item, idx) => (
             <button
               key={idx}
-              className="bg-white text-black font-medium px-8 py-5 rounded-lg shadow-md hover:bg-[#F4AA41] hover:scale-115 hover:transition  hover:text-white"
+              className="px-2 bg-white text-black font-medium md:px-8 py-3 rounded-lg shadow-md hover:bg-[#F4AA41] hover:scale-115 hover:transition  hover:text-white"
             >
               {item}
             </button>

@@ -82,7 +82,7 @@ const AboutTeam = () => {
       <div className="flex justify-between mt-4">
         <div className="w-full bg-[#F4AA41] text-left rounded-tr-4xl pl-[10%] py-[5%]">
           {textBox.map((item, index) => (
-            <p className="text-[2rem] font-normal py-4" key={index}>
+            <p className="text-[2rem] font-normal py-4 " key={index}>
               <span className="text-[2.3rem] text-white font-bold pr-2">
                 {item.boldText}
               </span>
@@ -120,7 +120,7 @@ const AboutTeam = () => {
                   alt="img"
                   width={290}
                   height={100}
-                  className=" grayscale-[100%] rounded-xl border"
+                  className="grayscale-[100%] rounded-xl h-[300px] border border-black"
                 />
                 <h4 className="text-[1.8rem] font-bold mt-2">{item.name}</h4>
                 <p className="text-[1.5rem] font-normal">{item.desig}</p>
@@ -138,7 +138,7 @@ const AboutTeam = () => {
                   alt="img"
                   width={170}
                   height={90}
-                  className=" grayscale-[100%] rounded-xl border"
+                  className=" grayscale-[100%] rounded-xl border border-black"
                 />
                 <h4 className="text-[1.2rem] font-bold mt-2">{item.name}</h4>
                 <p className="text-[0.8rem] font-normal">{item.desig}</p>

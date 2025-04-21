@@ -27,7 +27,7 @@ const people = [
 export default function ComingSoon() {
   const duplicatePeople = [...people, ...people];
 
-  const SLIDE_DURATION = 10;
+  const SLIDE_DURATION = 25;
   return (
     <>
       <div
@@ -101,6 +101,10 @@ export default function ComingSoon() {
           </form>
         </div>
       </section>
+      <div className="flex w-full bg-gradient-to-t from-[#fff8ee] to-[#eec1bb]">
+        <div className="w-1/2 h-6 bg-white rounded-tr-full"></div>
+        <div className="w-1/2 h-6 bg-white rounded-tl-full"></div>
+      </div>
     </>
   );
 }

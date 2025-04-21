@@ -1,38 +1,42 @@
 "use client";
+
 import { useState } from "react";
 import Image from "next/image";
+import { FaBars, FaTimes } from "react-icons/fa"; // React Icons
 
 const Navbar = () => {
   const [lang, setLang] = useState("En");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", href: "#" },
+    { name: "About Us", href: "#" },
+    { name: "Contact Us", href: "#" },
+  ];
+
   return (
-    <div>
-      <nav className="flex justify-between items-center px-[12%]">
+    <header className="b g-black text-white">
+      <nav className="flex justify-between items-center px-6 md:px-[12%] py-4">
+        {/* Logo */}
         <div className="flex items-center">
-          <Image src="/logo.png" alt="Logo" width={100} height={100} />
+          <Image src="/logo.png" alt="Logo" width={80} height={80} />
         </div>
 
-        <div className="flex gap-6 items-center text-white">
-          <ul className="flex gap-6 font-semibold  text-white">
-            <li>
-              <a href="#" className="hover:text-[#F4AA41]">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#F4AA41]">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#F4AA41]">
-                Contact Us
-              </a>
-            </li>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-8 items-center">
+          <ul className="flex gap-6 font-semibold">
+            {navLinks.map((link, idx) => (
+              <li key={idx}>
+                <a href={link.href} className="hover:text-[#F4AA41]">
+                  {link.name}
+                </a>
+              </li>
+            ))}
             <li>
               <select
                 value={lang}
                 onChange={(e) => setLang(e.target.value)}
-                className=" bg-transparent border-none focus:outline-none hover:text-[#F4AA41]"
+                className="bg-transparent border-none focus:outline-none hover:text-[#F4AA41]"
               >
                 <option value="En">En</option>
                 <option value="Fr">Fr</option>
@@ -41,8 +45,52 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+
+        <div className="md:hidden z-50 bg-white rounded border-[#F4AA41]">
+          {menuOpen ? (
+            <FaTimes
+              size={20}
+              className="text-[#F4AA41]  w-10 h-10 p-2 cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            />
+          ) : (
+            <FaBars
+              size={20}
+              className="text-[#F4AA41]  w-10 h-10 p-2 cursor-pointer"
+              onClick={() => setMenuOpen(true)}
+            />
+          )}
+        </div>
       </nav>
-    </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden bg-black px-6 py-4 transition-all duration-300 ${
+          menuOpen ? "block" : "hidden"
+        }`}
+      >
+        <ul className="flex flex-col gap-4 text-white font-medium">
+          {navLinks.map((link, idx) => (
+            <li key={idx}>
+              <a href={link.href} className="hover:text-[#F4AA41]">
+                {link.name}
+              </a>
+            </li>
+          ))}
+          <li>
+            <select
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+              className="bg-transparent border-none focus:outline-none hover:text-[#F4AA41]"
+            >
+              <option value="En">En</option>
+              <option value="Fr">Fr</option>
+              <option value="Es">Es</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </header>
   );
 };
 
