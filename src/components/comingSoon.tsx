@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const people = [
   { src: "/image1.png", label: "Inner Peace.." },
@@ -15,36 +13,21 @@ const people = [
   { src: "/image8.png", label: "" },
   { src: "/image1.png", label: "Soul nourishing.." },
   { src: "/image7.png", label: "" },
+  { src: "/image6.png", label: "Mental Reset.." },
+  { src: "/image8.png", label: "" },
+  { src: "/image1.png", label: "Soul nourishing.." },
+  { src: "/image6.png", label: "Mental Reset.." },
+  { src: "/image8.png", label: "" },
+  { src: "/image1.png", label: "Soul nourishing.." },
+  { src: "/image6.png", label: "Mental Reset.." },
+  { src: "/image8.png", label: "" },
+  { src: "/image1.png", label: "Soul nourishing.." },
 ];
 
 export default function ComingSoon() {
-  // const sliderTimer = useRef<NodeJS.Timeout | null>(null);
+  const duplicatePeople = [...people, ...people];
 
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    slides: {
-      perView: 5,
-      spacing: 3,
-    },
-    breakpoints: {
-      "(max-width: 768px)": {
-        slides: { perView: 2.5, spacing: 3 },
-      },
-      "(max-width: 480px)": {
-        slides: { perView: 1.5, spacing: 3 },
-      },
-    },
-  });
-
-  useEffect(() => {
-    if (!slider.current) return;
-
-    const interval = setInterval(() => {
-      slider.current?.next();
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [slider]);
+  const SLIDE_DURATION = 10;
   return (
     <>
       <div
@@ -59,28 +42,37 @@ export default function ComingSoon() {
         </h3>
       </div>
 
-      <div className="w-full py-10 px-4 overflow-hidden">
-        <div ref={sliderRef} className="keen-slider">
-          {people.map((person, idx) => (
+      <div className="w-full overflow-hidden py-10 bg-white">
+        <motion.div
+          className="flex gap-8 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "linear",
+            duration: SLIDE_DURATION,
+          }}
+        >
+          {duplicatePeople.map((person, idx) => (
             <div
               key={idx}
-              className="keen-slider__slide relative flex justify-center items-center flex-col"
+              className="relative  flex flex-col items-center justify-center"
             >
               <Image
                 src={person.src}
                 alt={`Person ${idx}`}
-                width={120}
-                height={120}
-                className="rounded-xl shadow-md"
+                width={100}
+                height={100}
+                className="rounded-xl shadow-md "
               />
               {person.label && (
-                <span className="absolute bottom-[-1.8rem] bg-white text-black text-sm font-semibold px-3 py-1 rounded-md shadow-md">
+                <span className="absolute -bottom-5 bg-white text-black text-xs font-semibold px-2 py-0.5 rounded-md shadow-md">
                   {person.label}
                 </span>
               )}
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <section className="bg-gradient-to-b from-[#fff8ee] to-[#eec1bb] text-center py-10 px-4 mt-4">
