@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const navbar = () => {
+const Navbar = () => {
   const [lang, setLang] = useState("En");
   return (
     <div>
@@ -46,4 +46,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

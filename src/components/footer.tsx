@@ -10,7 +10,7 @@ import {
 import { FaPhoneAlt, FaGlobe } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 
-export default function footer() {
+export default function Footer() {
   return (
     <footer className="bg-[#f4aa41] text-black px-6 py-10 sm:px-16 sm:py-14">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">

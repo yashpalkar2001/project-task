@@ -5,50 +5,27 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 
-//   {
-//     title: "NOW Foods",
-//     desc: "Essential Oils, D–3, Magnesium, Detox Support",
-//     img: "/Media2.png",
-//   },
-//   {
-//     title: "Herbalife",
-//     desc: "Shake Mix, Protein Powder, Herbal Tea Concentrate, with shaker cup and spoon.",
-//     img: "/Media2.png",
-//   },
-//   {
-//     title: "Athleta (by Gap)",
-//     desc: "Activewear, wellness accessories, loungewear",
-//     img: "/Media2.png",
-//   },
-//   {
-//     title: "Athleta (by Gap)",
-//     desc: "Activewear, wellness accessories, loungewear",
-//     img: "/Media2.png",
-//   },
-//   {
-//     title: "Athleta (by Gap)",
-//     desc: "Activewear, wellness accessories, loungewear",
-//     img: "/Media2.png",
-//   },
-//   {
-//     title: "Athleta (by Gap)",
-//     desc: "Activewear, wellness accessories, loungewear",
-//     img: "/Media2.png",
-//   },
-//   {
-//     title: "Athleta (by Gap)",
-//     desc: "Activewear, wellness accessories, loungewear",
-//     img: "/Media2.png",
-//   },
-//   {
-//     title: "Athleta (by Gap)",
-//     desc: "Activewear, wellness accessories, loungewear",
-//     img: "/Media2.png",
-//   },
-//   // add more products as needed...
-// ];
+interface SlideItem {
+  img: string;
+  title: string;
+  desc: string;
+}
 
-const sliderComponents = ({ title, subtitle, paragraph, data, displayBg }) => {
+interface SliderComponentProps {
+  title: string;
+  subtitle: string;
+  paragraph: string;
+  displayBg?: string;
+  data: SlideItem[];
+}
+
+const SliderComponents = ({
+  title,
+  subtitle,
+  paragraph,
+  data,
+  displayBg,
+}: SliderComponentProps) => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     renderMode: "performance",
@@ -112,4 +89,4 @@ const sliderComponents = ({ title, subtitle, paragraph, data, displayBg }) => {
   );
 };
 
-export default sliderComponents;
+export default SliderComponents;

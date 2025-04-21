@@ -1,8 +1,15 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
 
-const imgComponents = ({ img, title, paraghaph }) => {
+interface ImgComponentProps {
+  img: string;
+  title: string;
+  paraghaph: string; // Optional: rename to 'paragraph' for clarity
+}
+
+const ImgComponents = ({ img, title, paraghaph }: ImgComponentProps) => {
   return (
     <div className="border border-[#F4AA41] rounded-xl w-fit ">
       <div className="flex items-center">
@@ -23,4 +30,4 @@ const imgComponents = ({ img, title, paraghaph }) => {
   );
 };
 
-export default imgComponents;
+export default ImgComponents;

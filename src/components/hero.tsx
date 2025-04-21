@@ -3,7 +3,7 @@
 import React from "react";
 import Navbar from "./navbar";
 
-const hero = () => {
+const Hero = () => {
   const items = [
     "Services",
     "Products",
@@ -53,4 +53,4 @@ const hero = () => {
   );
 };
 
-export default hero;
+export default Hero;

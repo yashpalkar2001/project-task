@@ -1,9 +1,9 @@
 "use client";
+
 import Image from "next/image";
-import SliderComponents from "./sliderComponant";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const people = [
   { src: "/image1.png", label: "Inner Peace.." },
@@ -15,11 +15,6 @@ const people = [
   { src: "/image8.png", label: "" },
   { src: "/image1.png", label: "Soul nourishing.." },
   { src: "/image7.png", label: "" },
-  //   { src: "/people/10.jpg", label: "" },
-  //   { src: "/people/11.jpg", label: "" },
-  //   { src: "/people/12.jpg", label: "Calm Within.." },
-  //   { src: "/people/13.jpg", label: "" },
-  //   { src: "/people/14.jpg", label: "" },
 ];
 
 export default function ComingSoon() {
@@ -41,7 +36,6 @@ export default function ComingSoon() {
     },
   });
 
-  // 🔁 Autoplay
   useEffect(() => {
     if (!slider.current) return;
 
@@ -90,25 +84,6 @@ export default function ComingSoon() {
       </div>
 
       <section className="bg-gradient-to-b from-[#fff8ee] to-[#eec1bb] text-center py-10 px-4 mt-4">
-        {/* <div className="flex flex-wrap justify-center gap-4 mt-8">
-          {people.map((person, idx) => (
-            <div key={idx} className="relative">
-              <Image
-                src={person.src}
-                alt={`Person ${idx + 1}`}
-                width={80}
-                height={80}
-                className="rounded-lg"
-              />
-              {person.label && (
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full bg-white text-black text-sm px-2 py-1 rounded-md shadow">
-                  {person.label}
-                </span>
-              )}
-            </div>
-          ))}
-        </div> */}
-
         <div className="mt-16">
           <h3 className="text-[3rem] md:text-2xl font-bold">
             World’s Largest Wellness Universe is

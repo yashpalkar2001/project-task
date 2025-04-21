@@ -1,6 +1,6 @@
-import Image from "next/image";
+"use client";
 
-export default function readyToEvolve() {
+export default function ReadyToEvolve() {
   return (
     <section className="relative flex flex-col items-center justify-center text-center py-[10%] px-4 sm:px-8 bg-white overflow-hidden">
       {/* Background infinity logo */}

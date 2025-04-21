@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const aboutTeam = () => {
+const AboutTeam = () => {
   const textBox = [
     {
       boldText: "WeEvolve",
@@ -151,4 +151,4 @@ const aboutTeam = () => {
   );
 };
 
-export default aboutTeam;
+export default AboutTeam;

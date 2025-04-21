@@ -2,7 +2,7 @@
 import React from "react";
 import ImgComonents from "./imgComponents";
 
-const explor = () => {
+const Explor = () => {
   const data = [
     {
       imag: "/media.png",
@@ -67,4 +67,4 @@ const explor = () => {
   );
 };
 
-export default explor;
+export default Explor;
