@@ -23,7 +23,7 @@ const Hero = () => {
         }}
       >
         <div className="absolute inset-0 bg-black/50 z-0" />
-        <div className="w-full absolute top-[4%]">
+        <div className="w-full absolute top-[4%] z-20">
           <Navbar />
         </div>
         <div className="absolute bottom-10 flex flex-wrap gap-2 md:gap-6 justify-center w-full ">

@@ -65,7 +65,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-black px-6 py-4 transition-all duration-300 ${
+        className={`md:hidden bg-black px-6 py-4 transition-all duration-300  ${
           menuOpen ? "block" : "hidden"
         }`}
       >
